@@ -32,6 +32,11 @@ class App extends React.Component {
 			.then((user) => {
 				this.setState({ user });
 			});
+
+		let goodURL = window.location.href;
+		goodURL = goodURL.replace(window.location.search, '');
+
+		window.history.pushState(null, null, goodURL);
 	}
 
 	getImage = async () => {
